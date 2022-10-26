@@ -1,0 +1,54 @@
+
+/* create variables */
+
+$primaryBtn : red;
+
+$lightGrey : #1f1f1f;
+
+$fontH3 : monospace;
+
+/* CSS syntax */
+.btn1 {
+    background-color: blue;
+}
+
+.btn1:hover {
+    background-color: rgb(0, 0, 255, 0.8);
+}
+
+/* SASS syntax */
+.btn2 {
+    background-color: $primaryBtn;
+    &:hover {
+        background-color: rgb(255, 0, 0, 0.8);
+    }
+}
+
+/* css nesting */
+body {
+    
+    margin: 20px;
+    color: azure;
+    background-color: $lightGrey;
+    h3 {
+        font-family: $fontH3;
+    }
+}
+
+
+
+/* MIXINS */
+@mixin centerDiv($direction, $bg-color, $color) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $direction;
+    background-color: $bg-color;
+    color: $color;
+}
+
+section {
+    @include centerDiv(column, azure, black);
+} 
+/* import extenral css */
+@import './header';
